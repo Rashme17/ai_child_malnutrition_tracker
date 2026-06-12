@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  orchestrator:
+    build:
+      context: ./orchestrator
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./orchestrator/templates:/app/templates
+      - ./orchestrator/static:/app/static
+    depends_on:
+      - ml_service
+      - prolog_service
+      - rl_service
+    environment:
+      - ML_SERVICE_URL=http://ml_service:5002
+      - PROLOG_SERVICE_URL=http://prolog_service:5001
+      - RL_SERVICE_URL=http://rl_service:5003
+    networks:
+      - microservices_net
+
+  ml_service:
+    build:
+      context: ./ml_service
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - microservices_net
+
+  prolog_service:
+    build:
+      context: ./prolog_service
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - microservices_net
+
+  rl_service:
+    build:
+      context: ./rl_service
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+    networks:
+      - microservices_net
+
+networks:
+  microservices_net:
+    driver: bridge

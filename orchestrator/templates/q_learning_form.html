@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Learning Simulation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .card { max-width: 500px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }
+        .btn { background: #ff6b35; border: none; }
+        .btn:hover { background: #e55a2b; }
+    </style>
+</head>
+<body>
+    <div class="card p-4">
+        <h1 class="text-center mb-4"><i class="bi bi-robot"></i> Q-Learning Agent Simulation</h1>
+        <p class="text-muted text-center">Train the agent with episodes to learn optimal treatment actions for malnutrition states.</p>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="episodes" class="form-label">Number of Episodes</label>
+                <input type="number" class="form-control" id="episodes" name="episodes" min="10" max="10000" value="500" required>
+                <small class="form-text text-muted">Recommended: 500+ for good learning.</small>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Run Simulation</button>
+        </form>
+        <a href="/" class="btn btn-secondary w-100 mt-2">Back to Diagnosis</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+numpy==1.26.4
+pandas==2.2.2
+flask==2.0.3
+werkzeug==2.0.3
+requests==2.25.1
+pyswip==0.2.10

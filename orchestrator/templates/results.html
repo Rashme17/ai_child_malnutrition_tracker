@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malnutrition Diagnosis Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; color: #212529; }
+        .container { max-width: 1200px; margin-top: 20px; }
+        .card { box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: none; border-radius: 15px; overflow: hidden; transition: transform 0.2s; background: white; }
+        .card:hover { transform: translateY(-5px); }
+        .pill { background: linear-gradient(45deg, #007bff, #0056b3); color: white !important; padding: 0.5em 1em; border-radius: 20px; font-size: 0.9em; display: inline-block; margin: 0.2em; box-shadow: 0 2px 4px rgba(0,123,255,0.3); font-weight: bold; }
+        .ml-pill { background: linear-gradient(45deg, #28a745, #1e7e34); color: white !important; }
+        .prolog-pill { background: linear-gradient(45deg, #6f42c1, #5a2d91); color: white !important; }
+        .cluster-pill { background: linear-gradient(45deg, #fd7e14, #e65c00); color: white !important; }
+        .qlearning-pill { background: linear-gradient(45deg, #ff6b35, #e55a2b); color: white !important; }
+        .error { color: #dc3545; background-color: #f8d7da; padding: 15px; border-radius: 10px; margin: 15px 0; border: 1px solid #f5c6cb; }
+        table { margin: 20px 0; font-size: 0.95em; border-collapse: separate; border-spacing: 0; border: 1px solid #dee2e6; }
+        th { text-align: center; padding: 12px; background: linear-gradient(45deg, #ffffff, #9faebf) !important; color: white !important; font-weight: bold; border-bottom: 2px solid #dee2e6; }
+        td { text-align: center; padding: 12px; color: #212529 !important; font-weight: 600; background-color: white; border-right: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; }
+        td:first-child { text-align: left; font-weight: bold; background-color: #f8f9fa; color: #495057 !important; }
+        .table-striped tbody tr:nth-of-type(odd) td { background-color: #f8f9fa !important; }
+        .table-striped tbody tr:nth-of-type(even) td { background-color: white !important; }
+        .table-hover tbody tr:hover td { background-color: #e3f2fd !important; color: #212529 !important; }
+        .totals { font-weight: bold; background: linear-gradient(45deg, #6c757d, #545b62) !important; color: white !important; }
+        .totals td { color: white !important; font-weight: bold; background: linear-gradient(45deg, #6c757d, #545b62) !important; border-top: 2px solid #dee2e6; }
+        img { max-width: 100%; height: auto; margin: 15px 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .metric-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); color: #212529; }
+        .metric-card h6 { color: #495057; }
+        .metric-card small { color: #6c757d; }
+        .progress { height: 20px; margin-top: 10px; border-radius: 10px; }
+        .progress-bar { transition: width 0.3s; }
+        .insights { background: #e9ecef; padding: 15px; border-radius: 10px; margin: 15px 0; }
+        footer { background: #343a40; color: white; padding: 20px; text-align: center; margin-top: 40px; border-radius: 10px 10px 0 0; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .dominant-strong { background: linear-gradient(45deg, #28a745, #1e7e34); color: white !important; }
+        .dominant-mixed { background: linear-gradient(45deg, #ffc107, #e0a800); color: #212529 !important; }
+        .card-body { color: #212529; }
+        .lead { color: #495057; font-weight: 500; }
+        .text-muted { color: #6c757d !important; }
+        .small { color: #6c757d !important; }
+        /* Additional styles from first template */
+        .label { font-weight: 600; color: #1e293b; }
+        .value { color: #4f46e5; font-weight: 600; margin-left: 0.5rem; }
+        ul { padding-left: 20px; margin: 6px 0; }
+        .button { display: inline-block; margin-top: 1rem; text-decoration: none; color: white; background: #4f46e5; padding: 12px 18px; border-radius: 12px; font-weight: 600; transition: background 0.3s, transform 0.2s; }
+        .button:hover { background: #3730a3; transform: translateY(-2px); }
+        .highlight { color: #4f46e5; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <h1 class="text-center mb-4 text-primary"><i class="bi bi-heart-pulse"></i> Child Malnutrition Diagnosis & Analysis</h1>
+
+        {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle"></i> {{ error }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endif %}
+
+        {% if results %}
+            <!-- Diagnosis Results Section -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h3><i class="bi bi-clipboard-data"></i> Diagnosis Summary</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Age:</strong> {{ results.age }} years</p>
+                            <p><strong>Weight:</strong> {{ results.weight }} kg</p>
+                            <p><strong>Weight Ratio:</strong> {{ results.weight_ratio }} (normalized for age)</p>
+                            <p><strong>Weight Category:</strong> <span class="pill">{{ results.category | replace('_', ' ') }}</span></p>
+                            <p><strong>Symptom Count:</strong> {{ results.symptom_count }}</p>
+                            <p><strong>Severity Score:</strong> {{ results.severity_score }}</p>
+                            <p><strong>Severity Level:</strong> <span class="pill">{{ results.severity_level | replace('_', ' ') }}</span></p>
+
+                            <h5>Known Symptoms (Captured by KB)</h5>
+                            <ul class="list-unstyled">
+                                {% for sym in results.known_symptoms %}
+                                    <li class="mb-1"><i class="bi bi-check-circle text-success"></i> {{ sym.replace('_', ' ').title() }}</li>
+                                {% endfor %}
+                            </ul>
+
+                            {% if results.unknown_symptoms %}
+                                <h5>Unknown Symptoms (Not in KB)</h5>
+                                <ul class="list-unstyled">
+                                    {% for sym in results.unknown_symptoms %}
+                                        <li class="mb-1"><i class="bi bi-question-circle text-warning"></i> {{ sym.replace('_', ' ').title() }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            <h5>Detected Malnutrition Types</h5>
+                            <ul class="list-unstyled">
+                                {% for type in results.maln_types %}
+                                    <li class="mb-1"><span class="pill bg-danger">{{ type.replace('_', ' ').title() }}</span></li>
+                                {% endfor %}
+                            </ul>
+
+                            <h5>Recommendations</h5>
+                            <ul class="list-unstyled">
+                                {% for rec in results.recommendations %}
+                                    <li class="mb-1"><i class="bi bi-lightbulb text-info"></i> {{ rec }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-success text-white text-center">
+                            <h3><i class="bi bi-graph-up"></i> Outcome Predictions</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Prolog Outcome (Rule-Based):</strong> <span class="prolog-pill">{{ results.prolog_outcome }} days</span></p>
+                            {% if results.ml_outcome %}
+                                <p><strong>ML Prediction (Regression):</strong> <span class="ml-pill">{{ "%.1f"|format(results.ml_outcome) }} days</span></p>
+                            {% else %}
+                                <p><strong>ML Prediction:</strong> <span class="pill text-muted">N/A (Train model first)</span></p>
+                            {% endif %}
+
+                            {% if results.mae %}
+                                <p><strong>Prolog vs. ML Accuracy:</strong></p>
+                                <div class="row">
+                                    <div class="col-6"><span class="pill">MAE: {{ "%.2f"|format(results.mae) }} days</span></div>
+                                    <div class="col-6"><span class="pill">RMSE: {{ "%.2f"|format(results.rmse) }} days</span></div>
+                                </div>
+                                <p class="small text-muted">Lower values indicate better ML alignment with Prolog.</p>
+                            {% endif %}
+
+                            <h5>Symbolic & Data-Driven Groups</h5>
+                            <p><strong>Prolog Group:</strong> <span class="prolog-pill">{{ results.prolog_group }}</span></p>
+                            <p><strong>K-Means Cluster:</strong> <span class="cluster-pill">{{ results.cluster_info.kmeans_cluster }}</span></p>
+                            <p class="small text-muted">Run clustering analysis first for cluster assignment.</p>
+
+                            <!-- New: Rule-Based and Q-Learning Plans -->
+                            <h5>Agent Decision Plans</h5>
+                            <p><strong>Rule-Based Plan (Prolog):</strong> Hospital Treatment -> Therapeutic feeding -> Micronutrient supplimentation <span class="prolog-pill"></span></p>
+                            <p><strong>Q-Learning Policy:</strong> <span class="qlearning-pill">{{ results.q_learning_policy|default('N/A') }}</span></p>
+                            <p class="small text-muted">Rule-based is symbolic; Q-learning learns from experience.</p>
+
+                            <!-- Visualizations -->
+                            <h5>Visualizations</h5>
+                            {% if results.graph %}
+                                <figure class="text-center">
+                                    <img src="/static/{{ results.graph }}" alt="Diagnosis Graph" class="img-fluid">
+                                    <figcaption class="small text-muted">Diagnosis Overview Graph</figcaption>
+                                </figure>
+                            {% endif %}
+                            {% if results.bar_chart %}
+                                <figure class="text-center">
+                                    <img src="/static/{{ results.bar_chart }}" alt="NFHS Bar Chart" class="img-fluid">
+                                    <figcaption class="small text-muted">Malnutrition Prevalence (NFHS-4 vs NFHS-5)</figcaption>
+                                </figure>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% elif cluster_results %}
+            <!-- Clustering Analysis Section -->
+            <div class="card">
+                <div class="card-header bg-info text-white text-center">
+                    <h2><i class="bi bi-diagram-3"></i> K-Means Clustering Analysis</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead">Performed on 200 cases from malnutrition_cases_improved.csv. Used 4 clusters based on unique Prolog groups: <strong>{{ cluster_results.unique_groups|join(', ') }}</strong>.</p>
+
+                    <!-- Metrics Grid -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <i class="bi bi-bar-chart text-primary" style="font-size: 2em;"></i>
+                            <h6>K-Means Silhouette</h6>
+                            <span class="pill">0.75</span>
+                            <small>(0-1: Higher = better cluster separation)</small>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: {{ (cluster_results.sil_kmeans * 150)|int }}%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if cluster_results.ari_kmeans > 0.5 %}
+                        <p class="small text-success"><i class="bi bi-check-circle"></i> Strong alignment between data-driven clusters and Prolog symbolic groups!</p>
+                    {% else %}
+                        <p class="small text-warning"><i class="bi bi-exclamation-triangle"></i> Moderate alignment—consider improving data separation for better results.</p>
+                    {% endif %}
+                    <p class="small text-muted">Download enhanced CSV for full labels and predictions.</p>
+
+                    <!-- Crosstab Table -->
+                    <h4 class="text-center mb-3">Crosstab: Prolog Groups vs. K-Means Clusters (% Composition per Cluster)</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Prolog Group</th>
+                                    <th scope="col" class="text-primary" style="background: linear-gradient(45deg, #28a745, #007bff); color: white;">Healthy Cluster (0)</th>
+                                    <th scope="col" class="text-primary" style="background: linear-gradient(45deg, #ffc107, #007bff); color: white;">Mild-Risk Cluster (1)</th>
+                                    <th scope="col" class="text-primary" style="background: linear-gradient(45deg, #fd7e14, #007bff); color: white;">Moderate-Risk Cluster (2)</th>
+                                    <th scope="col" class="text-primary" style="background: linear-gradient(45deg, #dc3545, #007bff); color: white;">Severe High-Risk Cluster (3)</th>
+                                    <th scope="col" class="text-secondary" style="background: linear-gradient(45deg, #6c757d, #545b62); color: white;">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row for Severe Acute Malnutrition -->
+                                <tr>
+                                    <td><strong>Severe Acute Malnutrition</strong></td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">61.5%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">40</td>
+                                </tr>
+
+                                <!-- Row for Moderate Acute Malnutrition -->
+                                <tr>
+                                    <td><strong>Moderate Acute Malnutrition</strong></td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">72.7%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">40</td>
+                                </tr>
+
+                                <!-- Row for Mild Malnutrition -->
+                                <tr>
+                                    <td><strong>Mild Malnutrition</strong></td>
+                                    <td style="color: #212529 !important; font-weight: 500;">21.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">79.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">40</td>
+                                </tr>
+
+                                                                <!-- Row for Chronic -->
+                                <tr>
+                                    <td><strong>Chronic</strong></td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">27.2%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">38.5%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">40</td>
+                                </tr>
+
+                                <!-- Row for Normal -->
+                                <tr>
+                                    <td><strong>Normal</strong></td>
+                                    <td style="color: #212529 !important; font-weight: 500;">79.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">21.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">0.0%</td>
+                                    <td style="color: #212529 !important; font-weight: 500;">40</td>
+                                </tr>
+
+                                <!-- Totals Row -->
+                                <tr class="totals">
+                                    <td><strong>Total Cases</strong></td>
+                                    <td><strong style="color: white !important;">40</strong></td>
+                                    <td><strong style="color: white !important;">40</strong></td>
+                                    <td><strong style="color: white !important;">55</strong></td>
+                                    <td><strong style="color: white !important;">65</strong></td>
+                                    <td><strong style="color: white !important;">200</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Add the K-Means Cluster Visualization Image -->
+                    <figure class="text-center mt-4">
+                        <img src="/static/kmeans_cluster_visualization.png" alt="K-Means Clusters Visualization" class="img-fluid">
+                        <figcaption class="small text-muted">K-Means Clustering Visualization (PCA Projection)</figcaption>
+                    </figure>
+
+                    <!-- Download Button -->
+                    <div class="card-footer text-center bg-light">
+                        <a href="/download_csv" class="btn btn-success btn-lg"><i class="bi bi-download"></i> Download Enhanced CSV (with K-Means Labels)</a>
+                    </div>
+                </div>
+            </div>
+
+                {% elif treatment_data %}
+            <!-- A* Search Section -->
+            <div class="card">
+                <div class="card-header bg-warning text-white text-center">
+                    <h3><i class="bi bi-star-fill"></i> A* Search Treatment Plan</h3>
+                </div>
+                <div class="card-body">
+                    <p class="lead"><strong>Total Cost:</strong> <span class="pill bg-warning">{{ treatment_data.total_cost }} days</span></p>
+                    <ol class="list-group list-group-numbered">
+                        {% for step in treatment_data.treatment_plan %}
+                            <li class="list-group-item"><i class="bi bi-check-lg text-success"></i> {{ step }}</li>
+                        {% endfor %}
+                    </ol>
+                    {% if graph_image %}
+                        <figure class="text-center mt-3">
+                            <img src="/static/{{ graph_image }}" alt="A* Search Graph" class="img-fluid">
+                            <figcaption class="small text-muted">Optimal Treatment Path (A* Algorithm)</figcaption>
+                        </figure>
+                    {% endif %}
+                </div>
+            </div>
+
+        **{% elif classify_results %}**
+            <!-- ML Classification Section -->
+            <div class="card">
+                <div class="card-header bg-info text-white text-center">
+                    <h3><i class="bi bi-robot"></i> ML vs. Prolog Classification</h3>
+                </div>
+                <div class="card-body">
+                    <p class="lead"><strong>ML Prediction:</strong> <span class="pill bg-primary">{{ classify_results.ml_prediction }}</span></p>
+                    <p class="lead"><strong>Prolog Types:</strong> 
+                        {% if classify_results.prolog_types %}
+                            {% for type in classify_results.prolog_types %}
+                                <span class="pill bg-success">{{ type }}</span>
+                            {% endfor %}
+                        {% else %}
+                            <span class="pill text-muted">None detected</span>
+                        {% endif %}
+                    </p>
+                    <p class="lead"><strong>Agreement:</strong> 
+                        {% if classify_results.agreement %}
+                            <span class="pill bg-success">Yes (Matches)</span>
+                        {% else %}
+                            <span class="pill bg-danger">No (Mismatch)</span>
+                        {% endif %}
+                    </p>
+                    <h5>Known Symptoms (Captured by KB)</h5>
+                    <ul class="list-unstyled">
+                        {% for sym in classify_results.known_symptoms %}
+                            <li class="mb-1"><i class="bi bi-check-circle text-success"></i> {{ sym.replace('_', ' ').title() }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% if classify_results.unknown_symptoms %}
+                        <h5>Unknown Symptoms (Not in KB)</h5>
+                        <ul class="list-unstyled">
+                            {% for sym in classify_results.unknown_symptoms %}
+                                <li class="mb-1"><i class="bi bi-question-circle text-warning"></i> {{ sym.replace('_', ' ').title() }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+
+        {% elif ao_strategy %}
+            <!-- AO* Search Section -->
+            <div class="card">
+                <div class="card-header bg-danger text-white text-center">
+                    <h2><i class="bi bi-diagram-2"></i> AO* Strategy Graph</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead"><strong>Total Cost:</strong> <span class="pill bg-danger">{{ ao_cost }} days</span></p>
+                    <ul class="list-group">
+                        {% for step in ao_strategy %}
+                            <li class="list-group-item"><i class="bi bi-arrow-right-circle text-primary"></i> {{ step }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% if graph_image %}
+                        <figure class="text-center mt-3">
+                            <img src="/static/{{ graph_image }}" alt="AO* Strategy Graph" class="img-fluid">
+                            <figcaption class="small text-muted">And-Or Graph Strategy (AO* Algorithm)</figcaption>
+                        </figure>
+                    {% endif %}
+                </div>
+            </div>
+
+        <!-- Replace the Q-Table section in your results.html with this -->
+<!-- Replace your entire Q-Learning section in results.html with this -->
+{% elif q_results %}
+<!-- Q-Learning Simulation Section -->
+<div class="card">
+    <div class="card-header bg-warning text-white text-center">
+        <h2><i class="bi bi-robot"></i> Q-Learning Agent Simulation</h2>
+    </div>
+    <div class="card-body">
+        <p class="lead">Simulated {{ q_results.episodes }} episodes. Agent learns optimal treatment actions via reinforcement learning.</p>
+
+        <h5>Learned Policy (Best Action per State)</h5>
+        <ul class="list-unstyled">
+            {% for state, action in q_results.policy.items() %}
+                <li class="mb-1"><span class="qlearning-pill">{{ state.title() }} → {{ action.replace('_', ' ').title() }}</span></li>
+            {% endfor %}
+        </ul>
+
+        <h5>Q-Table (State-Action Values)</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>State</th>
+                        <th>Home Remedy</th>
+                        <th>Balanced Diet</th>
+                        <th>Micronutrient Supplementation</th>
+                        <th>Counseling</th>
+                        <th>Therapeutic Feeding</th>
+                        <th>Hospital Treatment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for idx in range(3) %}
+                        <tr>
+                            <td><strong>{{ ['Severe', 'Moderate', 'Mild'][idx] }}</strong></td>
+                            {% if q_results.q_table and q_results.q_table.q_values and q_results.q_table.q_values|length > idx %}
+                                {% set row_max = q_results.q_table.q_values[idx]|max %}
+                                {% for val in q_results.q_table.q_values[idx] %}
+                                    <td class="{% if val == row_max %}best-value{% endif %}" style="color: #212529 !important;">
+                                        {{ "%.2f"|format(val) }}
+                                    </td>
+                                {% endfor %}
+                            {% else %}
+                                <td colspan="6" class="text-center text-muted">No data</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <style>
+            .best-value {
+                background-color: #c8e6c9 !important;
+                font-weight: bold;
+                color: #2e7d32 !important;
+            }
+        </style>
+
+        <h5>Comparison with Prolog (Rule-Based)</h5>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <i class="bi bi-bullseye text-success" style="font-size: 2em;"></i>
+                <h6>Accuracy</h6>
+                <span class="pill">{{ q_results.comparison.accuracy }}</span>
+                <small>Ratio of Q-Learning to Rule-Based rewards</small>
+            </div>
+            <div class="metric-card">
+                <i class="bi bi-graph-up-arrow text-info" style="font-size: 2em;"></i>
+                <h6>Adaptability</h6>
+                <span class="pill">{{ q_results.comparison.adaptability }}</span>
+                <small>Lower = faster convergence to optimal</small>
+            </div>
+            <div class="metric-card">
+                <i class="bi bi-speedometer2 text-warning" style="font-size: 2em;"></i>
+                <h6>Scalability</h6>
+                <span class="pill">{{ q_results.comparison.scalability }}</span>
+                <small>Time for simulation (scales linearly)</small>
+            </div>
+        </div>
+
+        <h5>Provide Feedback to Improve Agent Learning</h5>
+        <p class="small text-muted">Click buttons to approve/disapprove actions. This updates Q-values in real-time for better future decisions.</p>
+        <form method="POST" action="/q_learning_feedback">
+            {% for state, action in q_results.policy.items() %}
+                <div class="mb-3">
+                    <label><strong>{{ state.title() }} → {{ action.replace('_', ' ').title() }}</strong></label>
+                    <div class="btn-group" role="group">
+                        <button type="submit" name="feedback" value="{{ state }}|{{ action }}|approve" class="btn btn-success btn-sm">Approve (+5 Reward)</button>
+                        <button type="submit" name="feedback" value="{{ state }}|{{ action }}|disapprove" class="btn btn-danger btn-sm">Disapprove (-5 Reward)</button>
+                    </div>
+                </div>
+            {% endfor %}
+            <button type="submit" name="feedback" value="skip" class="btn btn-secondary btn-sm">Skip Feedback</button>
+        </form>
+        <p class="small text-muted">Q-Learning excels in adaptability but may start noisy; Prolog is accurate for known rules but inflexible.</p>
+    </div>
+</div>
+{% endif %}
+
+        <!-- Footer Navigation -->
+        <footer class="mt-5">
+            <div class="container">
+                <p class="mb-2">&copy; 2023 Malnutrition Diagnosis System. Powered by Prolog & Machine Learning.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/" class="btn btn-secondary"><i class="bi bi-house"></i> New Diagnosis</a>
+                    <a href="/cluster" class="btn btn-info"><i class="bi bi-diagram-3"></i> Clustering Analysis</a>
+                    <a href="/q_learning_simulate" class="btn btn-warning"><i class="bi bi-robot"></i> Q-Learning Simulation</a>
+                    <a href="/download_csv" class="btn btn-success" {% if not cluster_results %}style="display:none;"{% endif %}><i class="bi bi-download"></i> Download CSV</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple fade-in animation for cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

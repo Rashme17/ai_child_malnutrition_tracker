@@ -1,0 +1,161 @@
+age,weight,weight_ratio,symptom_count,severity_score,outcome_days,malnutrition_type,prolog_group,weight_category,severity_level,selected_symptoms,risk_cluster,risk_cluster_name,kmeans_cluster,kmeans_cluster_name
+5.1,12.4,0.54,5,18.5,95.5,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|irritability|stunted_growth|low_weight,3,High Risk,0,Severe High-Risk Cluster
+1.6,3.8,0.53,9,25.0,94.2,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|diarrhea|brittle_hair|fatigue|irritability|pale_skin|stunted_growth|delayed_development,3,High Risk,0,Severe High-Risk Cluster
+8.9,22.0,0.55,8,25.0,95.5,severe_acute_malnutrition,severe_acute_malnutrition,normal,severe,swollen_belly|frequent_illness|diarrhea|hair_discoloration|stunted_growth|loss_of_appetite|skin_infections|low_weight,3,High Risk,0,Severe High-Risk Cluster
+4.2,8.9,0.47,9,25.0,91.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|low_weight|stunted_growth|fatigue|irritability|hair_discoloration|slow_healing_wounds|brittle_hair,3,High Risk,0,Severe High-Risk Cluster
+7.8,15.1,0.43,8,22.8,94.1,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|fatigue|diarrhea|irritability|hair_discoloration|skin_infections|slow_healing_wounds,3,High Risk,0,Severe High-Risk Cluster
+2.9,4.7,0.36,8,23.7,95.5,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|weak_immunity|loss_of_appetite|brittle_hair|low_weight|pale_skin|skin_infections,3,High Risk,0,Severe High-Risk Cluster
+3.7,8.2,0.49,6,22.7,93.7,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|delayed_development|brittle_hair|pale_skin|fatigue,3,High Risk,0,Severe High-Risk Cluster
+3.8,8.2,0.48,5,21.7,89.6,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|slow_healing_wounds|delayed_development|stunted_growth,3,High Risk,0,Severe High-Risk Cluster
+1.3,3.0,0.51,7,24.8,91.1,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|stunted_growth|skin_infections|slow_healing_wounds|delayed_development|loss_of_appetite,3,High Risk,0,Severe High-Risk Cluster
+11.1,18.0,0.36,5,17.6,91.0,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|loss_of_appetite|brittle_hair|low_weight,3,High Risk,0,Severe High-Risk Cluster
+7.5,18.2,0.54,8,25.0,94.1,severe_acute_malnutrition,severe_acute_malnutrition,moderately_underweight,severe,swollen_belly|frequent_illness|diarrhea|weak_immunity|hair_discoloration|stunted_growth|skin_infections|loss_of_appetite,3,High Risk,0,Severe High-Risk Cluster
+1.8,4.4,0.54,6,16.6,93.9,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|hair_discoloration|brittle_hair|irritability|loss_of_appetite,3,High Risk,2,Moderate-Risk Cluster
+8.8,20.2,0.51,5,17.3,93.3,severe_acute_malnutrition,severe_acute_malnutrition,moderately_underweight,severe,swollen_belly|frequent_illness|delayed_development|loss_of_appetite|fatigue,3,High Risk,0,Severe High-Risk Cluster
+10.5,22.2,0.47,9,25.0,92.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|diarrhea|stunted_growth|low_weight|fatigue|brittle_hair|slow_healing_wounds|skin_infections,3,High Risk,0,Severe High-Risk Cluster
+9.0,19.4,0.48,8,25.0,94.9,severe_acute_malnutrition,severe_acute_malnutrition,moderately_underweight,severe,swollen_belly|frequent_illness|fatigue|stunted_growth|skin_infections|brittle_hair|weak_immunity|delayed_development,3,High Risk,0,Severe High-Risk Cluster
+10.3,22.7,0.49,6,21.6,91.5,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|pale_skin|delayed_development|diarrhea|fatigue,3,High Risk,0,Severe High-Risk Cluster
+5.7,9.0,0.35,7,23.7,95.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|irritability|brittle_hair|slow_healing_wounds|stunted_growth|pale_skin,3,High Risk,0,Severe High-Risk Cluster
+3.7,7.2,0.43,6,20.1,94.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|hair_discoloration|diarrhea|fatigue|pale_skin,3,High Risk,0,Severe High-Risk Cluster
+10.7,22.6,0.47,7,23.4,92.6,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|weak_immunity|skin_infections|brittle_hair|hair_discoloration|fatigue,3,High Risk,0,Severe High-Risk Cluster
+3.1,7.5,0.54,7,23.1,93.1,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|irritability|delayed_development|low_weight|fatigue|slow_healing_wounds,3,High Risk,0,Severe High-Risk Cluster
+11.0,19.8,0.4,9,25.0,91.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|slow_healing_wounds|delayed_development|skin_infections|brittle_hair|stunted_growth|fatigue|loss_of_appetite,3,High Risk,0,Severe High-Risk Cluster
+5.6,9.8,0.39,6,22.0,92.2,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|diarrhea|delayed_development|fatigue|weak_immunity,3,High Risk,0,Severe High-Risk Cluster
+6.7,14.8,0.49,7,20.7,92.9,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|skin_infections|irritability|weak_immunity|pale_skin|brittle_hair,3,High Risk,0,Severe High-Risk Cluster
+8.7,19.2,0.49,4,15.9,92.9,severe_acute_malnutrition,severe_acute_malnutrition,moderately_underweight,severe,swollen_belly|frequent_illness|pale_skin|fatigue,3,High Risk,0,Severe High-Risk Cluster
+8.5,18.0,0.47,7,20.2,89.7,severe_acute_malnutrition,severe_acute_malnutrition,moderately_underweight,severe,swollen_belly|frequent_illness|diarrhea|hair_discoloration|slow_healing_wounds|brittle_hair|skin_infections,3,High Risk,0,Severe High-Risk Cluster
+5.1,9.2,0.4,5,18.9,96.1,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|loss_of_appetite|skin_infections|delayed_development,3,High Risk,0,Severe High-Risk Cluster
+6.9,11.5,0.37,9,25.0,95.4,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|fatigue|pale_skin|hair_discoloration|weak_immunity|stunted_growth|low_weight|skin_infections,3,High Risk,0,Severe High-Risk Cluster
+10.4,19.7,0.42,6,20.0,91.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|stunted_growth|pale_skin|irritability|diarrhea,3,High Risk,0,Severe High-Risk Cluster
+2.1,5.1,0.54,4,15.0,88.3,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|slow_healing_wounds|irritability,3,High Risk,2,Moderate-Risk Cluster
+9.1,16.4,0.4,7,21.5,94.3,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|skin_infections|loss_of_appetite|stunted_growth|slow_healing_wounds|diarrhea,3,High Risk,0,Severe High-Risk Cluster
+11.8,23.9,0.45,6,18.6,94.2,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|loss_of_appetite|weak_immunity|hair_discoloration|brittle_hair,3,High Risk,0,Severe High-Risk Cluster
+4.1,9.0,0.49,9,25.0,93.3,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|hair_discoloration|low_weight|irritability|stunted_growth|slow_healing_wounds|brittle_hair|skin_infections,3,High Risk,0,Severe High-Risk Cluster
+8.1,13.5,0.37,8,25.0,92.5,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|irritability|delayed_development|stunted_growth|brittle_hair|skin_infections|pale_skin,3,High Risk,0,Severe High-Risk Cluster
+4.4,8.9,0.45,7,24.1,93.3,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|weak_immunity|low_weight|brittle_hair|hair_discoloration|pale_skin,3,High Risk,0,Severe High-Risk Cluster
+3.6,6.8,0.42,6,21.0,95.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|hair_discoloration|stunted_growth|irritability|brittle_hair,3,High Risk,0,Severe High-Risk Cluster
+7.3,11.8,0.36,9,25.0,92.5,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|irritability|hair_discoloration|loss_of_appetite|fatigue|pale_skin|delayed_development|skin_infections,3,High Risk,0,Severe High-Risk Cluster
+11.8,23.9,0.45,8,25.0,94.9,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|pale_skin|hair_discoloration|diarrhea|low_weight|delayed_development|weak_immunity,3,High Risk,0,Severe High-Risk Cluster
+7.3,14.8,0.45,6,24.7,91.8,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|low_weight|stunted_growth|delayed_development|brittle_hair,3,High Risk,0,Severe High-Risk Cluster
+9.5,15.4,0.36,9,25.0,94.2,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|fatigue|low_weight|slow_healing_wounds|loss_of_appetite|stunted_growth|hair_discoloration|delayed_development,3,High Risk,0,Severe High-Risk Cluster
+5.1,8.0,0.35,8,25.0,95.2,severe_acute_malnutrition,severe_acute_malnutrition,severely_underweight,severe,swollen_belly|frequent_illness|weak_immunity|stunted_growth|hair_discoloration|pale_skin|loss_of_appetite|slow_healing_wounds,3,High Risk,0,Severe High-Risk Cluster
+6.9,18.9,0.61,3,10.6,61.6,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|hair_discoloration,2,Moderate Risk,2,Moderate-Risk Cluster
+2.0,6.1,0.68,4,11.9,62.4,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|frequent_illness|brittle_hair,2,Moderate Risk,2,Moderate-Risk Cluster
+2.3,7.1,0.69,4,11.9,61.0,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|hair_discoloration|loss_of_appetite,2,Moderate Risk,2,Moderate-Risk Cluster
+5.4,17.0,0.7,3,10.6,63.5,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|skin_infections,2,Moderate Risk,2,Moderate-Risk Cluster
+3.5,9.9,0.63,3,11.0,62.5,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|fatigue,2,Moderate Risk,2,Moderate-Risk Cluster
+5.8,18.3,0.7,4,11.9,62.6,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|hair_discoloration|diarrhea,2,Moderate Risk,2,Moderate-Risk Cluster
+1.2,3.8,0.7,3,10.9,61.0,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|diarrhea,2,Moderate Risk,2,Moderate-Risk Cluster
+4.3,12.4,0.64,4,11.9,62.3,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|fatigue|diarrhea,2,Moderate Risk,2,Moderate-Risk Cluster
+2.8,8.7,0.69,4,11.9,61.2,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|brittle_hair|skin_infections,2,Moderate Risk,2,Moderate-Risk Cluster
+4.7,12.9,0.61,3,10.4,61.6,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|irritability,2,Moderate Risk,2,Moderate-Risk Cluster
+1.8,5.0,0.62,3,9.9,61.7,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|irritability,2,Moderate Risk,2,Moderate-Risk Cluster
+1.5,4.0,0.6,4,11.9,64.4,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|delayed_development|weak_immunity,2,Moderate Risk,2,Moderate-Risk Cluster
+3.7,10.7,0.64,3,11.5,62.9,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|hair_discoloration,2,Moderate Risk,2,Moderate-Risk Cluster
+4.3,13.2,0.68,4,11.9,61.3,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|weak_immunity|swollen_belly,2,Moderate Risk,2,Moderate-Risk Cluster
+1.7,5.0,0.65,4,11.9,62.8,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|fatigue|slow_healing_wounds,2,Moderate Risk,2,Moderate-Risk Cluster
+3.6,10.9,0.67,4,11.9,63.6,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|swollen_belly|delayed_development,2,Moderate Risk,2,Moderate-Risk Cluster
+1.1,3.8,0.76,3,11.3,61.5,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|low_weight,2,Moderate Risk,2,Moderate-Risk Cluster
+1.4,4.4,0.7,3,10.6,61.3,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|loss_of_appetite,2,Moderate Risk,2,Moderate-Risk Cluster
+5.1,15.8,0.69,3,11.9,61.5,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|hair_discoloration,2,Moderate Risk,2,Moderate-Risk Cluster
+3.3,11.0,0.74,4,11.8,61.8,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|fatigue|loss_of_appetite,2,Moderate Risk,2,Moderate-Risk Cluster
+5.1,14.9,0.65,4,11.9,60.0,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|fatigue|low_weight,2,Moderate Risk,2,Moderate-Risk Cluster
+4.8,16.0,0.74,3,11.9,62.3,moderate_acute_malnutrition,moderate_acute_malnutrition,normal,moderate,stunted_growth|pale_skin|swollen_belly,2,Moderate Risk,2,Moderate-Risk Cluster
+3.5,10.9,0.69,4,11.7,62.5,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|diarrhea|irritability,2,Moderate Risk,2,Moderate-Risk Cluster
+5.7,16.9,0.66,3,11.5,61.5,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|low_weight,2,Moderate Risk,2,Moderate-Risk Cluster
+3.3,9.9,0.67,3,11.8,61.9,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|fatigue,2,Moderate Risk,2,Moderate-Risk Cluster
+3.3,8.9,0.6,4,11.9,62.2,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|swollen_belly|low_weight,2,Moderate Risk,2,Moderate-Risk Cluster
+4.0,11.0,0.61,4,11.9,61.4,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|delayed_development|swollen_belly,2,Moderate Risk,2,Moderate-Risk Cluster
+5.5,17.8,0.72,3,10.1,61.7,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|hair_discoloration,2,Moderate Risk,2,Moderate-Risk Cluster
+5.4,16.8,0.69,3,10.2,62.5,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|fatigue,2,Moderate Risk,2,Moderate-Risk Cluster
+1.5,4.7,0.7,3,10.5,62.1,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|brittle_hair,2,Moderate Risk,2,Moderate-Risk Cluster
+4.5,14.8,0.73,3,11.0,62.2,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|irritability,2,Moderate Risk,2,Moderate-Risk Cluster
+5.5,16.1,0.65,4,11.9,64.0,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|weak_immunity|fatigue,2,Moderate Risk,2,Moderate-Risk Cluster
+3.6,10.5,0.65,4,11.9,59.8,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|hair_discoloration|frequent_illness,2,Moderate Risk,2,Moderate-Risk Cluster
+1.7,5.4,0.7,4,11.8,63.6,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|diarrhea|loss_of_appetite,2,Moderate Risk,2,Moderate-Risk Cluster
+3.9,10.5,0.6,4,11.9,63.8,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|loss_of_appetite|weak_immunity,2,Moderate Risk,2,Moderate-Risk Cluster
+6.8,18.7,0.61,3,11.8,63.5,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|fatigue,2,Moderate Risk,2,Moderate-Risk Cluster
+2.5,7.9,0.7,3,11.3,60.6,moderate_acute_malnutrition,moderate_acute_malnutrition,severely_underweight,moderate,stunted_growth|pale_skin|slow_healing_wounds,2,Moderate Risk,2,Moderate-Risk Cluster
+4.5,15.2,0.75,4,11.9,60.5,moderate_acute_malnutrition,moderate_acute_malnutrition,normal,moderate,stunted_growth|pale_skin|weak_immunity|skin_infections,2,Moderate Risk,2,Moderate-Risk Cluster
+4.9,14.3,0.65,3,11.9,61.0,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|fatigue,2,Moderate Risk,2,Moderate-Risk Cluster
+6.9,21.7,0.7,4,11.9,62.2,moderate_acute_malnutrition,moderate_acute_malnutrition,moderately_underweight,moderate,stunted_growth|pale_skin|swollen_belly|slow_healing_wounds,2,Moderate Risk,3,Mild-Risk Cluster
+8.4,27.6,0.73,3,9.8,117.5,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|irritability,2,Moderate Risk,3,Mild-Risk Cluster
+11.7,40.0,0.84,4,11.9,119.8,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections|fatigue,2,Moderate Risk,3,Mild-Risk Cluster
+8.9,32.8,0.82,3,11.7,120.2,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections,2,Moderate Risk,3,Mild-Risk Cluster
+9.4,32.1,0.76,4,11.9,121.3,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections|weak_immunity,2,Moderate Risk,3,Mild-Risk Cluster
+9.7,35.4,0.81,3,11.9,123.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|diarrhea,2,Moderate Risk,3,Mild-Risk Cluster
+11.3,37.1,0.73,3,11.5,121.3,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|low_weight,2,Moderate Risk,3,Mild-Risk Cluster
+8.1,29.5,0.81,3,10.0,120.5,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|irritability,2,Moderate Risk,3,Mild-Risk Cluster
+11.3,40.0,0.79,3,10.2,121.7,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|irritability,2,Moderate Risk,3,Mild-Risk Cluster
+9.5,32.9,0.77,3,9.4,124.3,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|irritability,2,Moderate Risk,3,Mild-Risk Cluster
+7.8,24.9,0.71,4,11.9,117.5,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|stunted_growth|low_weight,2,Moderate Risk,3,Mild-Risk Cluster
+7.5,27.0,0.8,3,10.8,125.9,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections,2,Moderate Risk,3,Mild-Risk Cluster
+10.1,37.7,0.83,4,11.9,122.9,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|diarrhea|fatigue,2,Moderate Risk,3,Mild-Risk Cluster
+7.3,26.0,0.79,3,10.5,119.8,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|slow_healing_wounds,2,Moderate Risk,3,Mild-Risk Cluster
+7.5,24.3,0.72,4,11.9,119.4,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|stunted_growth|frequent_illness,2,Moderate Risk,3,Mild-Risk Cluster
+9.1,34.0,0.83,3,11.4,121.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|frequent_illness,2,Moderate Risk,3,Mild-Risk Cluster
+7.3,23.7,0.72,3,11.9,120.3,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|frequent_illness,2,Moderate Risk,3,Mild-Risk Cluster
+9.7,32.7,0.75,4,11.9,118.7,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|hair_discoloration|weak_immunity,2,Moderate Risk,3,Mild-Risk Cluster
+10.2,32.6,0.71,3,11.9,121.2,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|swollen_belly,2,Moderate Risk,3,Mild-Risk Cluster
+10.0,38.2,0.85,4,11.9,121.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections|swollen_belly,2,Moderate Risk,3,Mild-Risk Cluster
+8.9,30.8,0.77,3,11.7,119.0,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|pale_skin,2,Moderate Risk,3,Mild-Risk Cluster
+10.8,34.0,0.7,3,11.5,124.0,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|weak_immunity,2,Moderate Risk,3,Mild-Risk Cluster
+8.4,28.4,0.75,4,11.9,118.9,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|frequent_illness|stunted_growth,2,Moderate Risk,3,Mild-Risk Cluster
+8.8,30.9,0.78,4,11.9,118.2,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|weak_immunity|hair_discoloration,2,Moderate Risk,3,Mild-Risk Cluster
+9.7,34.5,0.79,3,11.9,125.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|stunted_growth,2,Moderate Risk,3,Mild-Risk Cluster
+8.8,32.9,0.83,3,11.9,122.4,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|low_weight,2,Moderate Risk,3,Mild-Risk Cluster
+10.1,33.2,0.73,3,9.2,120.5,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|irritability,2,Moderate Risk,3,Mild-Risk Cluster
+11.0,35.1,0.71,3,11.6,122.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|hair_discoloration,2,Moderate Risk,3,Mild-Risk Cluster
+8.4,27.6,0.73,3,11.9,122.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|low_weight,2,Moderate Risk,3,Mild-Risk Cluster
+9.4,34.7,0.82,4,11.9,122.6,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|stunted_growth|frequent_illness,2,Moderate Risk,3,Mild-Risk Cluster
+7.7,27.4,0.79,3,11.9,117.3,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|swollen_belly,2,Moderate Risk,3,Mild-Risk Cluster
+8.7,30.9,0.79,3,10.1,116.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections,2,Moderate Risk,3,Mild-Risk Cluster
+12.0,40.0,0.75,3,11.0,123.3,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|weak_immunity,2,Moderate Risk,3,Mild-Risk Cluster
+7.7,27.0,0.78,3,11.9,122.4,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|weak_immunity,2,Moderate Risk,3,Mild-Risk Cluster
+11.2,40.0,0.85,3,11.4,119.5,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|frequent_illness,2,Moderate Risk,3,Mild-Risk Cluster
+9.0,34.0,0.84,3,10.4,122.2,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections,2,Moderate Risk,3,Mild-Risk Cluster
+7.9,26.0,0.73,4,11.9,124.1,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|low_weight|swollen_belly,2,Moderate Risk,3,Mild-Risk Cluster
+8.6,30.6,0.79,4,11.9,125.8,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections|low_weight,2,Moderate Risk,3,Mild-Risk Cluster
+9.4,31.7,0.75,3,10.7,125.5,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|skin_infections,2,Moderate Risk,3,Mild-Risk Cluster
+9.0,31.2,0.77,3,11.3,124.8,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|pale_skin,2,Moderate Risk,3,Mild-Risk Cluster
+8.7,28.2,0.72,4,11.9,124.7,chronic_malnutrition,moderate_acute_malnutrition,normal,moderate,delayed_development|brittle_hair|slow_healing_wounds|weak_immunity,2,Moderate Risk,3,Mild-Risk Cluster
+7.3,31.2,0.95,1,1.8,30.9,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+2.6,9.7,0.83,1,1.8,32.1,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+2.1,8.3,0.88,1,1.6,29.4,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+6.5,25.4,0.87,1,1.8,30.5,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+1.1,4.5,0.9,1,1.6,30.9,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+10.1,40.0,0.94,1,1.4,30.0,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+4.2,16.8,0.89,1,1.7,30.4,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+7.5,27.3,0.81,1,1.1,31.9,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+1.9,6.9,0.81,1,1.2,30.9,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+3.0,12.4,0.92,1,1.2,29.8,mild_malnutrition,mild_malnutrition,moderately_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+7.7,29.5,0.85,1,1.8,31.3,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+7.6,28.0,0.82,1,1.9,30.9,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+6.1,23.9,0.87,1,1.0,31.2,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+11.0,40.0,0.83,1,1.0,31.2,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,3,Mild-Risk Cluster
+4.4,18.0,0.91,1,1.2,30.1,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+6.7,28.9,0.96,1,1.9,29.3,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+6.9,25.5,0.82,1,1.4,30.4,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+5.7,23.6,0.92,1,1.6,29.2,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+5.2,21.5,0.92,1,1.7,30.9,mild_malnutrition,mild_malnutrition,moderately_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+6.8,26.9,0.88,1,1.8,28.6,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+2.1,8.0,0.85,1,1.3,30.8,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+10.9,40.0,0.89,1,1.3,29.4,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,3,Mild-Risk Cluster
+3.2,12.5,0.87,1,1.6,31.4,mild_malnutrition,mild_malnutrition,moderately_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+10.8,40.0,0.89,1,2.0,31.0,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,3,Mild-Risk Cluster
+7.6,31.5,0.92,1,1.3,29.8,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+2.0,8.1,0.9,1,1.1,30.9,mild_malnutrition,mild_malnutrition,moderately_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+10.6,40.0,0.9,1,1.6,30.8,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,3,Mild-Risk Cluster
+4.7,19.5,0.92,1,1.8,30.4,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+4.8,19.9,0.92,1,1.2,30.3,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+11.7,40.0,0.92,1,2.0,29.9,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,3,Mild-Risk Cluster
+6.2,23.4,0.84,1,1.7,29.3,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+8.7,33.7,0.86,1,1.4,30.1,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+2.5,10.6,0.94,1,1.8,31.1,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+6.8,28.2,0.92,1,1.4,30.5,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+6.5,26.3,0.9,1,1.7,30.1,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+3.8,15.6,0.91,1,1.8,30.4,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+5.4,22.1,0.91,1,2.0,29.9,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+3.0,10.9,0.81,1,1.9,31.9,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+8.9,35.6,0.89,1,2.0,31.0,mild_malnutrition,mild_malnutrition,normal,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
+2.5,9.8,0.87,1,1.2,29.7,mild_malnutrition,mild_malnutrition,severely_underweight,mild,loss_of_appetite,0,Healthy,1,Healthy Cluster
